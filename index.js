@@ -2,7 +2,7 @@
  * Create a timer (similar to setTimeout) that only runs when tab is visible
  * @param {function} callback
  * @param {number} timeoutMs
- * @return {function} clearTimeout
+ * @return {function} stopWaiting - call to abort timer
  */
 export default function whileTabVisibleTimeout(callback, timeoutMs) {
     let timeoutId;
@@ -34,10 +34,10 @@ export default function whileTabVisibleTimeout(callback, timeoutMs) {
         });
     }
 
-    return clearTimeout;
+    return stopWaiting;
 
-    function clearTimeout() {
-        cleanup();
+    function stopWaiting() {
+        cleanupListener();
         clearTimeout(timeoutId);
     }
 }
