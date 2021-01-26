@@ -1,0 +1,18 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Tab</title>
+    </head>
+    <body>
+        <script type="module">
+            // Expose function to test on window
+            import whileTabVisibleTimeout from '../index.js';
+
+            console.log('Exposing window.whileTabVisibleTimeout', {
+                whileTabVisibleTimeout,
+            });
+            window.whileTabVisibleTimeout = whileTabVisibleTimeout;
+        </script>
+    </body>
+</html>

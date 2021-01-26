@@ -1,0 +1,29 @@
+{
+    "name": "while-tab-visible-settimeout",
+    "version": "0.1.0",
+    "description": "`setTimeout`-like timer that pauses when tab is not visible.",
+    "main": "index.js",
+    "scripts": {
+        "test": "jest",
+        "serve": "serve -l 5000"
+    },
+    "jest": {
+        "preset": "jest-playwright-preset"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/micahjon/while-tab-visible-setTimeout.git"
+    },
+    "author": "Micah Engle-Eshleman",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/micahjon/while-tab-visible-setTimeout/issues"
+    },
+    "homepage": "https://github.com/micahjon/while-tab-visible-setTimeout#readme",
+    "devDependencies": {
+        "jest": "^26.6.3",
+        "jest-playwright-preset": "^1.4.5",
+        "playwright": "^1.8.0",
+        "serve": "^11.3.2"
+    }
+}
