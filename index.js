@@ -51,17 +51,18 @@ function whenNotVisible(callback) {
 }
 
 function onVisibilityChange(shouldBeVisible, callback) {
-    document.addEventListener('visibilitychange', function onVisibilityChange() {
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+    return cleanup;
+
+    function handleVisibilityChange() {
         if (shouldBeVisible === isTabVisible()) {
             cleanup();
             callback();
         }
-    });
-
-    return cleanup;
+    }
 
     function cleanup() {
-        document.removeEventListener('visibilitychange', onVisibilityChange);
+        document.removeEventListener('visibilitychange', handleVisibilityChange);
     }
 }
 
